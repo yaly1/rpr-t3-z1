@@ -2,7 +2,7 @@ package ba.unsa.etf.rpr.tutorijal03;
 
 import java.util.Objects;
 
-public class FiksniBroj extends TelefonskiBroj {
+public class FiksniBroj implements TelefonskiBroj {
 
     public enum Grad {TRAVNIK, ORASJE, ZENICA, SARAJEVO, LIVNO, TUZLA, MOSTAR, BIHAC, GORAZDE, SIROKI_BRIJEG, BRCKO}
 

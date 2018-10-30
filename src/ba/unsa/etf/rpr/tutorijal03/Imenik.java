@@ -3,33 +3,36 @@ package ba.unsa.etf.rpr.tutorijal03;
 import static ba.unsa.etf.rpr.tutorijal03.FiksniBroj.Grad;
 
 import java.util.HashMap;
+//import java.util.Map;
 import java.util.Set;
 
 public class Imenik {
 
-    //HashMap<>;
+    private HashMap imenik = new HashMap<String, TelefonskiBroj>();
 
-    public void dodaj(String ime, TelefonskiBroj broj) {
-
+    void dodaj(String ime, TelefonskiBroj broj) { // jer se ove metode ne koriste van paketa nisam stavio modifikator "public"
+        imenik.put(ime, broj);
     }
 
-    public String dajBroj(String ime) {
+    String dajBroj(String ime) {
+        TelefonskiBroj rez = (TelefonskiBroj) imenik.get(ime);
+        return rez.ispisi();
+    }
+
+    String dajIme(TelefonskiBroj broj) {
+        int rez = (int) imenik.get(broj);
         return null;
     }
 
-    public String dajIme(TelefonskiBroj broj) {
+    String naSlovo(char s) {
         return null;
     }
 
-    public String naSlovo(char s) {
+    Set<String> izGrada(Grad g) {
         return null;
     }
 
-    public Set<String> izGrada(Grad g) {
-        return null;
-    }
-
-    public Set<TelefonskiBroj> izGradaBrojevi(Grad g) {
+    Set<TelefonskiBroj> izGradaBrojevi(Grad g) {
         return null;
     }
 }
