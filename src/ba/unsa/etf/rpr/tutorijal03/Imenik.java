@@ -31,7 +31,20 @@ public class Imenik {
     }
 
     String naSlovo(char s) {
-        return null;
+        String rezultat = "";
+        Set set = imenik.entrySet();
+        Iterator iterator = set.iterator();
+        int i = 1;
+        while(iterator.hasNext()) {
+            HashMap.Entry hashMapEntry = (HashMap.Entry) iterator.next();
+            String pomocniKljuc = (String) hashMapEntry.getKey();
+            if(pomocniKljuc.charAt(0) == s) {
+                TelefonskiBroj pomocnaVarijabla = (TelefonskiBroj) hashMapEntry.getValue();
+                rezultat += i + ". " + hashMapEntry.getKey() + " - " + pomocnaVarijabla.ispisi() + "\n";
+                i++;
+            }
+        }
+        return rezultat;
     }
 
     Set<String> izGrada(Grad g) {

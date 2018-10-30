@@ -14,7 +14,7 @@ public class MobilniBroj implements TelefonskiBroj {
 
     @Override
     public String ispisi() {
-        return '0' + mobilnaMreza + '/' + broj;
+        return "0" + mobilnaMreza + "/" + broj;
     }
 
     @Override
