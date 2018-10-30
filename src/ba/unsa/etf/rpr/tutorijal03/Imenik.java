@@ -2,11 +2,9 @@ package ba.unsa.etf.rpr.tutorijal03;
 
 import static ba.unsa.etf.rpr.tutorijal03.FiksniBroj.Grad;
 
-import java.util.HashMap;
+import java.util.*;
 //import java.util.Map;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Set;
+
 
 public class Imenik {
 
@@ -66,6 +64,18 @@ public class Imenik {
     }
 
     Set<TelefonskiBroj> izGradaBrojevi(Grad g) {
-        return null;
+        Set<TelefonskiBroj> rezultat = new TreeSet<>();
+        Set set = imenik.entrySet();
+        Iterator iterator = set.iterator();
+        while(iterator.hasNext()) {
+            HashMap.Entry hashMapEntry = (HashMap.Entry) iterator.next();
+            if(hashMapEntry.getValue() instanceof FiksniBroj) {
+                FiksniBroj pomocnaVarijabla = (FiksniBroj) hashMapEntry.getValue();
+                if (pomocnaVarijabla.getGrad() == g) {
+                    rezultat.add(pomocnaVarijabla);
+                }
+            }
+        }
+        return rezultat;
     }
 }

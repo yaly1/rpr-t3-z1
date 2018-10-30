@@ -2,11 +2,7 @@ package ba.unsa.etf.rpr.tutorijal03;
 
 import java.util.Objects;
 
-public class FiksniBroj implements TelefonskiBroj {
-
-    public Grad getGrad() {
-        return grad;
-    }
+public class FiksniBroj implements TelefonskiBroj, Comparable {
 
     public enum Grad {TRAVNIK, ORASJE, ZENICA, SARAJEVO, LIVNO, TUZLA, MOSTAR, BIHAC, GORAZDE, SIROKI_BRIJEG, BRCKO}
 
@@ -16,6 +12,29 @@ public class FiksniBroj implements TelefonskiBroj {
     FiksniBroj(Grad grad, String broj) {
         this.grad = grad;
         this.broj = broj;
+    }
+
+    public Grad getGrad() {
+        return grad;
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        FiksniBroj drugiBroj = (FiksniBroj) o;
+        if (this.vrijednostBroja() < drugiBroj.vrijednostBroja()) return -1;
+        if (this.vrijednostBroja() > drugiBroj.vrijednostBroja()) return 1;
+        return 0;
+    }
+
+    private int vrijednostBroja() {
+        int suma = 0;
+        String pomocniString = this.ispisi();
+        for(int i = 0; i < pomocniString.length(); i++) {
+            if(Character.isDigit(pomocniString.charAt(i))) {
+                suma += suma * 10 + pomocniString.charAt(i);
+            }
+        }
+        return suma;
     }
 
     @Override
