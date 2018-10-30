@@ -14,16 +14,14 @@ public class FiksniBroj implements TelefonskiBroj, Comparable {
         this.broj = broj;
     }
 
-    public Grad getGrad() {
+    Grad getGrad() {
         return grad;
     }
 
     @Override
     public int compareTo(Object o) {
         FiksniBroj drugiBroj = (FiksniBroj) o;
-        if (this.vrijednostBroja() < drugiBroj.vrijednostBroja()) return -1;
-        if (this.vrijednostBroja() > drugiBroj.vrijednostBroja()) return 1;
-        return 0;
+        return  (Integer.compare(this.vrijednostBroja(), drugiBroj.vrijednostBroja()));
     }
 
     private int vrijednostBroja() {
