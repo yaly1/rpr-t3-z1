@@ -4,6 +4,10 @@ import java.util.Objects;
 
 public class FiksniBroj implements TelefonskiBroj {
 
+    public Grad getGrad() {
+        return grad;
+    }
+
     public enum Grad {TRAVNIK, ORASJE, ZENICA, SARAJEVO, LIVNO, TUZLA, MOSTAR, BIHAC, GORAZDE, SIROKI_BRIJEG, BRCKO}
 
     private Grad grad;
