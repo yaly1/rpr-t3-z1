@@ -22,9 +22,12 @@ public class Imenik {
     String dajIme(TelefonskiBroj broj) {
         Set set = imenik.entrySet();
         Iterator iterator = set.iterator();
+        //for(Map.entry i : mapa)
         while(iterator.hasNext()) {
             HashMap.Entry hashMapEntry = (HashMap.Entry)iterator.next();
-            if(hashMapEntry.getValue() == broj) return (String) hashMapEntry.getKey();
+            TelefonskiBroj pomocniBroj = (TelefonskiBroj) hashMapEntry.getValue();
+            if((broj.ispisi().equals(pomocniBroj.ispisi())))
+                return (String) hashMapEntry.getKey();
         }
         return null;
     }

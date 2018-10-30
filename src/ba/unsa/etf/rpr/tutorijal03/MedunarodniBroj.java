@@ -13,7 +13,11 @@ public class MedunarodniBroj implements TelefonskiBroj {
 
     @Override
     public String ispisi() {
-        return null;
+        return drzava + " " + broj;
+    }
+
+    public String getDrzava() {
+        return drzava;
     }
 
     @Override
