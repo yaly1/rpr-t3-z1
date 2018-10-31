@@ -2,6 +2,14 @@ package ba.unsa.etf.rpr.tutorijal03;
 
 public class FiksniBroj implements TelefonskiBroj, Comparable {
 
+    private Grad grad;
+    private String broj;
+
+    FiksniBroj(Grad grad, String broj) {
+        this.grad = grad;
+        this.broj = broj;
+    }
+
     public enum Grad {
         TRAVNIK("030/"), ORASJE("031/"), ZENICA("032/"), SARAJEVO("033/"), LIVNO("034/"), TUZLA("035/"),
         MOSTAR("036/"), BIHAC("037/"), GORAZDE("038/"), SIROKI_BRIJEG("039/"), BRCKO("049/");
@@ -33,14 +41,6 @@ public class FiksniBroj implements TelefonskiBroj, Comparable {
             }
             return null;
         }
-    }
-
-    private Grad grad;
-    private String broj;
-
-    FiksniBroj(Grad grad, String broj) {
-        this.grad = grad;
-        this.broj = broj;
     }
 
     Grad getGrad() {
