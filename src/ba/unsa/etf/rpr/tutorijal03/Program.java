@@ -9,11 +9,14 @@ public class Program {
     public static void main(String[] args) {
 
         Imenik imenik = new Imenik();
+        MedunarodniBroj pom = new MedunarodniBroj("+387", "444-555R");
+        String pom1 = "", pom2 = "";
         Scanner ulaz = new Scanner(System.in);
+        
         int n;
         for(;;) { // program
             System.out.println("\nBirajte:\n1-Dodavanje broja\n2-Trazenje broja\n3-Trazenje osobe\n4-Ucitavanje sve brojeve na slovo" +
-                               "\n5-Ucitavanje sve imena iz grada\n6-Ucitavanje sve brojeve iz grada\n7-Zavrsi program");
+                               "\n5-Ucitavanje sve imena iz grada\n6-Ucitavanje sve brojeve iz grada\n0-Zavrsi program");
             n = ulaz.nextInt();
             ulaz.nextLine();
             switch (n) {
@@ -22,6 +25,7 @@ public class Program {
                     String ime = ulaz.nextLine();
                     System.out.print("Birajte: 1-Fiksni broj 2-Mobilni broj 3-Medunarodni broj: ");
                     int n1 = ulaz.nextInt();
+                    ulaz.nextLine();
                     switch (n1) {
                         case 1: {
                             System.out.print("Birajte grad: 1-TRAVNIK, 2-ORASJE, 3-ZENICA, 4-SARAJEVO, 5-LIVNO, 6-TUZLA," +
@@ -45,7 +49,6 @@ public class Program {
                         case 3: {
                             System.out.print("Unesite broj za drzavu(npr. +387,+976,...): ");
                             String brojDrzave = ulaz.nextLine();
-                            ulaz.nextLine();
                             System.out.print("Unesite ostatak broja: ");
                             String broj = ulaz.nextLine();
                             imenik.dodaj(ime, new MedunarodniBroj(brojDrzave, broj));
@@ -81,8 +84,14 @@ public class Program {
                 }
             if(n == 0) break;
         }
-
 /*
+        System.out.print("Unesite broj za drzavu(npr. +387,+976,...): ");
+        String brojDrzave = ulaz.nextLine();
+        //ulaz.nextLine();
+        System.out.print("Unesite ostatak broja: ");
+        String broj = ulaz.nextLine();
+        System.out.print(brojDrzave + ":" + broj);
+*//*
 String broj = "+99 123-123";int i = 0;
 String pom = "";
         while(broj.charAt(i) != ' ') pom += broj.charAt(i++);
