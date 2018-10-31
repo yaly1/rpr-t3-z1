@@ -10,9 +10,9 @@ public class Program {
         Imenik imenik = new Imenik();
         Scanner ulaz = new Scanner(System.in);
         int n = 1;
-        while(n != 0) { // program, pretpostavimo da ce korisnik unijeti tacni brojevi
+        while (n != 0) { // program, pretpostavimo da ce korisnik unijeti tacni brojevi
             System.out.println("\nBirajte:\n1-Dodavanje broja\n2-Trazenje broja\n3-Trazenje osobe\n4-Ucitavanje sve brojeve na slovo" +
-                               "\n5-Ucitavanje sve imena iz grada\n6-Ucitavanje sve brojeve iz grada\n0-Zavrsi program");
+                    "\n5-Ucitavanje sve imena iz grada\n6-Ucitavanje sve brojeve iz grada\n0-Zavrsi program");
             n = ulaz.nextInt();
             ulaz.nextLine();
             switch (n) {
@@ -61,22 +61,22 @@ public class Program {
                 case 3: {
                     System.out.print("Unesite broj trazene osobe: ");
                     String broj = ulaz.nextLine();
-                    if(broj.charAt(1) == '3' || broj.charAt(1) == '4') {
-                        if(broj.charAt(1) == '3')
-                             System.out.println("Trazeni broj je: "
-                                     + imenik.dajIme(new FiksniBroj(FiksniBroj.Grad.izBrojUGrad(broj.charAt(2) + 1 - 48), broj.substring(4))));
-                        else System.out.println("Trazeni broj je: " + imenik.dajIme(new FiksniBroj(FiksniBroj.Grad.izBrojUGrad(11), broj.substring(4))));
-                    }
-                    else if(broj.charAt(1) == '6')
-                        System.out.println("Trazeni broj je: " + imenik.dajIme(new MobilniBroj(60+broj.charAt(2) - 48, broj.substring(4))));
-                    else if(broj.charAt(0) == '+') {
+                    if (broj.charAt(1) == '3' || broj.charAt(1) == '4') {
+                        if (broj.charAt(1) == '3')
+                            System.out.println("Trazeni broj je: "
+                                    + imenik.dajIme(new FiksniBroj(FiksniBroj.Grad.izBrojUGrad(broj.charAt(2) + 1 - 48), broj.substring(4))));
+                        else
+                            System.out.println("Trazeni broj je: " + imenik.dajIme(new FiksniBroj(FiksniBroj.Grad.izBrojUGrad(11), broj.substring(4))));
+                    } else if (broj.charAt(1) == '6')
+                        System.out.println("Trazeni broj je: " + imenik.dajIme(new MobilniBroj(60 + broj.charAt(2) - 48, broj.substring(4))));
+                    else if (broj.charAt(0) == '+') {
                         int i = 0;
                         String brojDrzave = "";
                         StringBuilder sb = new StringBuilder();
-                        while(broj.charAt(i) != ' ') sb.append(broj.charAt(i++));
+                        while (broj.charAt(i) != ' ') sb.append(broj.charAt(i++));
                         //brojDrzave += broj.charAt(i++);
                         brojDrzave = sb.toString();
-                        System.out.println("Trazeni broj je: " + imenik.dajIme(new MedunarodniBroj(brojDrzave, broj.substring(i+1))));
+                        System.out.println("Trazeni broj je: " + imenik.dajIme(new MedunarodniBroj(brojDrzave, broj.substring(i + 1))));
                     }
                     break;
                 }

@@ -3,8 +3,6 @@ package ba.unsa.etf.rpr.tutorijal03;
 import static ba.unsa.etf.rpr.tutorijal03.FiksniBroj.Grad;
 
 import java.util.*;
-//import java.util.Map;
-
 
 public class Imenik {
 
@@ -23,10 +21,10 @@ public class Imenik {
         Set set = imenik.entrySet();
         Iterator iterator = set.iterator();
         //for(Map.entry i : mapa)
-        while(iterator.hasNext()) {
-            HashMap.Entry hashMapEntry = (HashMap.Entry)iterator.next();
+        while (iterator.hasNext()) {
+            HashMap.Entry hashMapEntry = (HashMap.Entry) iterator.next();
             TelefonskiBroj pomocniBroj = (TelefonskiBroj) hashMapEntry.getValue();
-            if((broj.ispisi().equals(pomocniBroj.ispisi())))
+            if ((broj.ispisi().equals(pomocniBroj.ispisi())))
                 return (String) hashMapEntry.getKey();
         }
         return null;
@@ -37,10 +35,10 @@ public class Imenik {
         Set set = imenik.entrySet();
         Iterator iterator = set.iterator();
         int i = 1;
-        while(iterator.hasNext()) {
+        while (iterator.hasNext()) {
             HashMap.Entry hashMapEntry = (HashMap.Entry) iterator.next();
             String pomocniKljuc = (String) hashMapEntry.getKey();
-            if(pomocniKljuc.charAt(0) == s) {
+            if (pomocniKljuc.charAt(0) == s) {
                 TelefonskiBroj pomocnaVarijabla = (TelefonskiBroj) hashMapEntry.getValue();
                 rezultat += i + ". " + hashMapEntry.getKey() + " - " + pomocnaVarijabla.ispisi() + "\n";
                 i++;
@@ -53,9 +51,9 @@ public class Imenik {
         Set<String> rezultat = new HashSet<>();
         Set set = imenik.entrySet();
         Iterator iterator = set.iterator();
-        while(iterator.hasNext()) {
+        while (iterator.hasNext()) {
             HashMap.Entry hashMapEntry = (HashMap.Entry) iterator.next();
-            if(hashMapEntry.getValue() instanceof FiksniBroj) {
+            if (hashMapEntry.getValue() instanceof FiksniBroj) {
                 FiksniBroj pomocnaVarijabla = (FiksniBroj) hashMapEntry.getValue();
                 if (pomocnaVarijabla.getGrad() == g) {
                     String pomocniKljuc = (String) hashMapEntry.getKey();
@@ -70,9 +68,9 @@ public class Imenik {
         Set<TelefonskiBroj> rezultat = new TreeSet<>();
         Set set = imenik.entrySet();
         Iterator iterator = set.iterator();
-        while(iterator.hasNext()) {
+        while (iterator.hasNext()) {
             HashMap.Entry hashMapEntry = (HashMap.Entry) iterator.next();
-            if(hashMapEntry.getValue() instanceof FiksniBroj) {
+            if (hashMapEntry.getValue() instanceof FiksniBroj) {
                 FiksniBroj pomocnaVarijabla = (FiksniBroj) hashMapEntry.getValue();
                 if (pomocnaVarijabla.getGrad() == g) {
                     rezultat.add(pomocnaVarijabla);

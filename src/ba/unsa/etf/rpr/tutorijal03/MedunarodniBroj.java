@@ -15,11 +15,7 @@ public class MedunarodniBroj implements TelefonskiBroj {
     public String ispisi() {
         return drzava + " " + broj;
     }
-
-    public String getDrzava() {
-        return drzava;
-    }
-
+    
     @Override
     public int hashCode() {
         return Objects.hash(drzava, broj);

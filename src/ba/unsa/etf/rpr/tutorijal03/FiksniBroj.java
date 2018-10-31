@@ -1,7 +1,5 @@
 package ba.unsa.etf.rpr.tutorijal03;
 
-import java.util.Objects;
-
 public class FiksniBroj implements TelefonskiBroj, Comparable {
 
     public enum Grad {
@@ -64,11 +62,4 @@ public class FiksniBroj implements TelefonskiBroj, Comparable {
             ...
         }*/
     }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(grad, broj);
-    }
 }
-
-
