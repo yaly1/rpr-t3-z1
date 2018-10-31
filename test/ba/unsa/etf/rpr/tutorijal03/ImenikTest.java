@@ -19,6 +19,15 @@ class ImenikTest {
     }
 
     @Test
+    void dodaj2() {
+        Imenik imenik = new Imenik();
+        imenik.dodaj("John Smith", new MedunarodniBroj("+1", "23 45-67-89"));
+        imenik.dodaj("Hana Hanic", new FiksniBroj(SARAJEVO, "123-156"));
+        imenik.dodaj("Meho Mehic", new FiksniBroj(SARAJEVO, "123-456"));
+        assertEquals("Meho Mehic", imenik.dajIme(new FiksniBroj(SARAJEVO, "123-456")));
+    }
+
+    @Test
     void naSlovo() {
         Imenik imenik = new Imenik();
         imenik.dodaj("Sara Sarac", new FiksniBroj(SARAJEVO, "123-156"));

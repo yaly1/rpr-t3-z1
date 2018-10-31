@@ -16,9 +16,4 @@ public class MobilniBroj implements TelefonskiBroj {
     public String ispisi() {
         return "0" + mobilnaMreza + "/" + broj;
     }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(mobilnaMreza, broj);
-    }
 }
