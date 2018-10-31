@@ -52,36 +52,16 @@ public class FiksniBroj implements TelefonskiBroj, Comparable {
     @Override
     public int compareTo(Object o) {
         FiksniBroj drugiBroj = (FiksniBroj) o;
-        return  (Integer.compare(this.vrijednostBroja(), drugiBroj.vrijednostBroja()));
-    }
-
-    private int vrijednostBroja() {
-        int suma = 0;
-        String pomocniString = this.ispisi();
-        for(int i = 0; i < pomocniString.length(); i++) {
-            if(Character.isDigit(pomocniString.charAt(i))) {
-                suma += suma * 10 + pomocniString.charAt(i);
-            }
-        }
-        return suma;
+        return this.ispisi().compareTo(drugiBroj.ispisi());
     }
 
     @Override
     public String ispisi() {
         return this.grad.toString() + broj;
-        /*
-        switch (grad) {
+        /*switch (grad) {
             case TRAVNIK       : return "030/" + broj;
             case ORASJE        : return "031/" + broj;
-            case ZENICA        : return "032/" + broj;
-            case SARAJEVO      : return "033/" + broj;
-            case LIVNO         : return "034/" + broj;
-            case TUZLA         : return "035/" + broj;
-            case MOSTAR        : return "036/" + broj;
-            case BIHAC         : return "037/" + broj;
-            case GORAZDE       : return "038/" + broj;
-            case SIROKI_BRIJEG : return "039/" + broj;
-            case BRCKO         : return "049/" + broj;
+            ...
         }*/
     }
 
