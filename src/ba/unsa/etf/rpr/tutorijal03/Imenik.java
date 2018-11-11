@@ -6,7 +6,7 @@ import java.util.*;
 
 public class Imenik {
 
-    private HashMap imenik = new HashMap<String, TelefonskiBroj>();
+    private Map imenik = new HashMap<String, TelefonskiBroj>();
 
     void dodaj(String ime, TelefonskiBroj broj) { // jer se ove metode ne koriste van paketa nisam stavio modifikator "public"
         imenik.put(ime, broj);

@@ -1,5 +1,7 @@
 package ba.unsa.etf.rpr.tutorijal03;
 
+import java.util.Objects;
+
 public class FiksniBroj implements TelefonskiBroj, Comparable {
 
     private Grad grad;
@@ -45,6 +47,20 @@ public class FiksniBroj implements TelefonskiBroj, Comparable {
 
     final Grad getGrad() {
         return grad;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        FiksniBroj that = (FiksniBroj) o;
+        return grad == that.grad &&
+                Objects.equals(broj, that.broj);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(grad, broj);
     }
 
     @Override

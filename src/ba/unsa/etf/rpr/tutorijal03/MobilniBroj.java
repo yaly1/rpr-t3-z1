@@ -1,7 +1,5 @@
 package ba.unsa.etf.rpr.tutorijal03;
 
-import java.util.Objects;
-
 public class MobilniBroj implements TelefonskiBroj {
 
     private int mobilnaMreza;
