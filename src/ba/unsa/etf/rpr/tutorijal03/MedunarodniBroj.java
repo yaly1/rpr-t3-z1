@@ -4,13 +4,13 @@ public class MedunarodniBroj implements TelefonskiBroj {
 
     private String drzava, broj;
 
-    MedunarodniBroj(String drzava, String broj) {
-        this.drzava = drzava;
-        this.broj = broj;
+    MedunarodniBroj(String d, String b) {
+        drzava = d;
+        broj = b;
     }
 
     @Override
-    final public String ispisi() {
+    public final String ispisi() {
         return drzava + " " + broj;
     }
 }

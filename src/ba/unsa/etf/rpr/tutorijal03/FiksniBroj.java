@@ -7,9 +7,9 @@ public class FiksniBroj implements TelefonskiBroj, Comparable {
     private Grad grad;
     private String broj;
 
-    FiksniBroj(Grad grad, String broj) {
-        this.grad = grad;
-        this.broj = broj;
+    FiksniBroj(Grad g, String b) {
+        grad = g;
+        broj = b;
     }
 
     enum Grad {
@@ -18,8 +18,8 @@ public class FiksniBroj implements TelefonskiBroj, Comparable {
 
         private final String pozivni;
 
-        Grad(String pozivni) {
-            this.pozivni = pozivni;
+        Grad(String p) {
+            pozivni = p;
         }
 
         @Override
@@ -63,8 +63,12 @@ public class FiksniBroj implements TelefonskiBroj, Comparable {
 
     @Override
     public final boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
         FiksniBroj that = (FiksniBroj) o;
         return grad == that.grad &&
                 Objects.equals(broj, that.broj);

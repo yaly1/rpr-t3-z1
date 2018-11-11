@@ -5,13 +5,13 @@ public class MobilniBroj implements TelefonskiBroj {
     private int mobilnaMreza;
     private String broj;
 
-    MobilniBroj(int mobilnaMreza, String broj) {
-        this.mobilnaMreza = mobilnaMreza;
-        this.broj = broj;
+    MobilniBroj(int mm, String b) {
+        mobilnaMreza = mm;
+        broj = b;
     }
 
     @Override
-    final public String ispisi() {
+    public final String ispisi() {
         return "0" + mobilnaMreza + "/" + broj;
     }
 }

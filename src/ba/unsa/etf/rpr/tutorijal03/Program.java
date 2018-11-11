@@ -3,7 +3,7 @@ package ba.unsa.etf.rpr.tutorijal03;
 import java.util.Scanner;
 import java.util.Set;
 
-public class Program {
+public final class Program {
 
     private Program() {
     }
