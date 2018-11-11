@@ -28,18 +28,30 @@ public class FiksniBroj implements TelefonskiBroj, Comparable {
         }
 
         public static Grad izBrojUGrad(int redniBroj) {
+            final int jedan = 1, dva = 2, tri = 3, cetiri = 4, pet = 5, sest = 6, sedam = 7, osam = 8, devet = 9, deset = 10, jedanaest = 11;
             switch (redniBroj) {
-                case 1: return TRAVNIK;
-                case 2: return ORASJE;
-                case 3: return ZENICA;
-                case 4: return SARAJEVO;
-                case 5: return LIVNO;
-                case 6: return TUZLA;
-                case 7: return MOSTAR;
-                case 8: return BIHAC;
-                case 9: return GORAZDE;
-                case 10: return SIROKI_BRIJEG;
-                case 11: return BRCKO;
+                case jedan:
+                    return TRAVNIK;
+                case dva:
+                    return ORASJE;
+                case tri:
+                    return ZENICA;
+                case cetiri:
+                    return SARAJEVO;
+                case pet:
+                    return LIVNO;
+                case sest:
+                    return TUZLA;
+                case sedam:
+                    return MOSTAR;
+                case osam:
+                    return BIHAC;
+                case devet:
+                    return GORAZDE;
+                case deset:
+                    return SIROKI_BRIJEG;
+                case jedanaest:
+                    return BRCKO;
             }
             return null;
         }
@@ -50,7 +62,7 @@ public class FiksniBroj implements TelefonskiBroj, Comparable {
     }
 
     @Override
-    public boolean equals(Object o) {
+    public final boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         FiksniBroj that = (FiksniBroj) o;
@@ -59,18 +71,18 @@ public class FiksniBroj implements TelefonskiBroj, Comparable {
     }
 
     @Override
-    public int hashCode() {
+    public final int hashCode() {
         return Objects.hash(grad, broj);
     }
 
     @Override
-    public int compareTo(Object o) {
+    public final int compareTo(Object o) {
         FiksniBroj drugiBroj = (FiksniBroj) o;
         return this.ispisi().compareTo(drugiBroj.ispisi());
     }
 
     @Override
-    public String ispisi() {
+    public final String ispisi() {
         return this.grad.toString() + broj;
         /*switch (grad) {
             case TRAVNIK       : return "030/" + broj;

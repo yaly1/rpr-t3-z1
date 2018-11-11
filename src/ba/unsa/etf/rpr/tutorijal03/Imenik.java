@@ -8,16 +8,16 @@ public class Imenik {
 
     private Map imenik = new HashMap<String, TelefonskiBroj>();
 
-    void dodaj(String ime, TelefonskiBroj broj) { // jer se ove metode ne koriste van paketa nisam stavio modifikator "public"
+    final void dodaj(String ime, TelefonskiBroj broj) { // jer se ove metode ne koriste van paketa nisam stavio modifikator "public"
         imenik.put(ime, broj);
     }
 
-    String dajBroj(String ime) {
+    final String dajBroj(String ime) {
         TelefonskiBroj rez = (TelefonskiBroj) imenik.get(ime);
         return rez.ispisi();
     }
 
-    String dajIme(TelefonskiBroj broj) {
+    final String dajIme(TelefonskiBroj broj) {
         Set set = imenik.entrySet();
         Iterator iterator = set.iterator();
         //for(Map.entry i : mapa)
@@ -31,7 +31,7 @@ public class Imenik {
         return null;
     }
 
-    String naSlovo(char s) {
+    final String naSlovo(char s) {
         String rezultat = "";
         Set set = imenik.entrySet();
         Iterator iterator = set.iterator();
@@ -55,7 +55,7 @@ public class Imenik {
         return rezultat;
     }
 
-    Set<String> izGrada(Grad g) {
+    final Set<String> izGrada(Grad g) {
         Set<String> rezultat = new HashSet<>();
         Set set = imenik.entrySet();
         Iterator iterator = set.iterator();
@@ -72,7 +72,7 @@ public class Imenik {
         return rezultat;
     }
 
-    Set<TelefonskiBroj> izGradaBrojevi(Grad g) {
+    final Set<TelefonskiBroj> izGradaBrojevi(Grad g) {
         Set<TelefonskiBroj> rezultat = new TreeSet<>();
         Set set = imenik.entrySet();
         Iterator iterator = set.iterator();

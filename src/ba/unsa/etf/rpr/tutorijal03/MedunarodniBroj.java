@@ -10,7 +10,7 @@ public class MedunarodniBroj implements TelefonskiBroj {
     }
 
     @Override
-    public String ispisi() {
+    final public String ispisi() {
         return drzava + " " + broj;
     }
 }
