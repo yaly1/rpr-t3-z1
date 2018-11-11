@@ -5,6 +5,9 @@ import java.util.Set;
 
 public class Program {
 
+    private Program() {
+    }
+
     public static void main(String[] args) {
 
         Imenik imenik = new Imenik();
@@ -62,21 +65,24 @@ public class Program {
                     System.out.print("Unesite broj trazene osobe: ");
                     String broj = ulaz.nextLine();
                     if (broj.charAt(1) == '3' || broj.charAt(1) == '4') {
-                        if (broj.charAt(1) == '3')
-                            System.out.println("Trazeni broj je: "
+                        if (broj.charAt(1) == '3') {
+                            System.out.println("Trazena osoba za fiksni broj je: "
                                     + imenik.dajIme(new FiksniBroj(FiksniBroj.Grad.izBrojUGrad(broj.charAt(2) + 1 - 48), broj.substring(4))));
-                        else
-                            System.out.println("Trazeni broj je: " + imenik.dajIme(new FiksniBroj(FiksniBroj.Grad.izBrojUGrad(11), broj.substring(4))));
-                    } else if (broj.charAt(1) == '6')
-                        System.out.println("Trazeni broj je: " + imenik.dajIme(new MobilniBroj(60 + broj.charAt(2) - 48, broj.substring(4))));
-                    else if (broj.charAt(0) == '+') {
+                        } else {
+                            System.out.println("Trazena osoba za fiksni broj je: " + imenik.dajIme(new FiksniBroj(FiksniBroj.Grad.izBrojUGrad(11), broj.substring(4))));
+                        }
+                    } else if (broj.charAt(1) == '6') {
+                        System.out.println("Trazena osoba za mobilni broj je: " + imenik.dajIme(new MobilniBroj(60 + broj.charAt(2) - 48, broj.substring(4))));
+                    } else if (broj.charAt(0) == '+') {
                         int i = 0;
                         String brojDrzave = "";
                         StringBuilder sb = new StringBuilder();
-                        while (broj.charAt(i) != ' ') sb.append(broj.charAt(i++));
+                        while (broj.charAt(i) != ' ') {
+                            sb.append(broj.charAt(i++));
+                        }
                         //brojDrzave += broj.charAt(i++);
                         brojDrzave = sb.toString();
-                        System.out.println("Trazeni broj je: " + imenik.dajIme(new MedunarodniBroj(brojDrzave, broj.substring(i + 1))));
+                        System.out.println("Trazena osoba za medunarodni broj je: " + imenik.dajIme(new MedunarodniBroj(brojDrzave, broj.substring(i + 1))));
                     }
                     break;
                 }

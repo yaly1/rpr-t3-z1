@@ -10,7 +10,7 @@ public class FiksniBroj implements TelefonskiBroj, Comparable {
         this.broj = broj;
     }
 
-    public enum Grad {
+    enum Grad {
         TRAVNIK("030/"), ORASJE("031/"), ZENICA("032/"), SARAJEVO("033/"), LIVNO("034/"), TUZLA("035/"),
         MOSTAR("036/"), BIHAC("037/"), GORAZDE("038/"), SIROKI_BRIJEG("039/"), BRCKO("049/");
 
@@ -43,7 +43,7 @@ public class FiksniBroj implements TelefonskiBroj, Comparable {
         }
     }
 
-    Grad getGrad() {
+    final Grad getGrad() {
         return grad;
     }
 

@@ -24,8 +24,9 @@ public class Imenik {
         while (iterator.hasNext()) {
             HashMap.Entry hashMapEntry = (HashMap.Entry) iterator.next();
             TelefonskiBroj pomocniBroj = (TelefonskiBroj) hashMapEntry.getValue();
-            if ((broj.ispisi().equals(pomocniBroj.ispisi())))
+            if ((broj.ispisi().equals(pomocniBroj.ispisi()))) {
                 return (String) hashMapEntry.getKey();
+            }
         }
         return null;
     }
@@ -40,7 +41,14 @@ public class Imenik {
             String pomocniKljuc = (String) hashMapEntry.getKey();
             if (pomocniKljuc.charAt(0) == s) {
                 TelefonskiBroj pomocnaVarijabla = (TelefonskiBroj) hashMapEntry.getValue();
-                rezultat += i + ". " + hashMapEntry.getKey() + " - " + pomocnaVarijabla.ispisi() + "\n";
+                StringBuilder sb = new StringBuilder();
+                sb.append(i);
+                sb.append(". ");
+                sb.append(hashMapEntry.getKey());
+                sb.append(" - ");
+                sb.append(pomocnaVarijabla.ispisi());
+                sb.append("\n");
+                rezultat = sb.toString();
                 i++;
             }
         }
