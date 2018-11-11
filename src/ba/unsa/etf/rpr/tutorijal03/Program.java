@@ -103,6 +103,7 @@ public final class Program {
                             " 7-MOSTAR, 8-BIHAC, 9-GORAZDE, 10-SIROKI_BRIJEG, 11-BRCKO: ");
                     int brojGrad = ulaz.nextInt();
                     Set<String> lista = imenik.izGrada(FiksniBroj.Grad.izBrojUGrad(brojGrad));
+                    //comment
                     /*Iterator it = lista.iterator();
                     while (it.hasNext()) {
                         String ime = (String) it.next();
